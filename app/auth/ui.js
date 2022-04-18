@@ -26,10 +26,13 @@ const onSignInSuccess = function (response){
     $('form').trigger('reset')
     $('#sign-in-form').hide()
     $('#sign-up-form').hide()
-    $('#sign-out-div').show()
+
+
+    // $('#sign-out-div').show()
    // document.querySelector('#status').innerHTML = "" ;
    $('main').show()
-   $('#change-password-form').show()
+   
+   $('#account_logo').show()
 
    winEvents.loadAllWins()
 
@@ -46,6 +49,7 @@ const onSignOutSuccess = function (){
     // $('#status').hide()
     $('main').hide()
     $('#change-password-form').hide()
+    $('#account_logo').hide()
 }
 
 const onChangePasswordSuccess = function(){

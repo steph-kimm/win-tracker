@@ -26,9 +26,21 @@ const getWins = function(){
     })
 }
 
+const deleteWin = function(id){
+    return $.ajax({
+        method: "DELETE",
+        url: config.apiUrl +'/wins/' + id,
+        headers: {
+            Authorization: 'Bearer ' + store.user.token,
+            
+        }
+    })
+}
+
 
 
 module.exports = {
     addNewWin,
-    getWins
+    getWins,
+    deleteWin
 }

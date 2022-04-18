@@ -33,9 +33,22 @@ const loadAllWins = function(){
     })
 }
 
+const deleteWin = function(){
+    console.log("connected to events")
+    console.log($(this).attr('id'))
+    let id = $(this).attr('id')
+    
+    winApi.deleteWin(id)
+    .then((response)=>{
+        winUi.onDeleteWinSuccess(id);
+
+    })
+}
+
 
 module.exports = {
     onNewWin,
-    loadAllWins
+    loadAllWins,
+    deleteWin
     
 }

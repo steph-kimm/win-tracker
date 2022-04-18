@@ -13,3 +13,25 @@
 .container {
     margin: 10px;
 }
+
+body{
+    background-color: beige;
+    align-items: center;
+}
+
+#title {
+    margin: auto;
+    width: 300px;
+}
+
+#welcome {
+    width: 500px;
+    margin: auto;
+    text-align:center;
+}
+
+#account_logo{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
