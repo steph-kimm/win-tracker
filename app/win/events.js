@@ -6,7 +6,7 @@ const winUi = require('./ui.js')
 
 const onNewWin= function(){
     event.preventDefault()
-    console.log("running events")
+    console.log("attempting to add new win")
     const form = event.target 
     const data = getFormFields(form)
     console.log(data)
@@ -44,11 +44,35 @@ const deleteWin = function(){
 
     })
 }
+const editWin = function(id){
+    console.log("connected to events")
 
+    console.log("id: " + id)
+
+
+
+    event.preventDefault()
+    console.log("running events")
+    const form = event.target 
+    const data = getFormFields(form)
+    console.log("data" + data)
+
+
+    winApi.editWin(id,data)    
+    
+    .then((response)=>{
+        console.log("Patch successful!")
+        winUi.onEditWinSuccess(data,id);
+    })
+    .catch(()=>{
+        console.log("Patch failed..")
+    })
+} 
 
 module.exports = {
     onNewWin,
     loadAllWins,
-    deleteWin
+    deleteWin,
+    editWin
     
 }

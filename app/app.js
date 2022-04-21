@@ -8,7 +8,7 @@ const { changePassword } = require('./auth/api.js')
 const authEvents = require('./auth/events.js')
 const winEvents = require('./win/events.js')
 
-
+let currentEditId = ""
 $(() => {
   // attatch event listeners 
   console.log("hi")
@@ -16,7 +16,8 @@ $(() => {
 
   $('#sign-in-form').on('submit',  authEvents.onSignIn)
   $('#sign-out-button').on('click',  authEvents.onSignOut)
-  $('main').on('submit',  winEvents.onNewWin)
+  $('#add-win-form').on('submit',  winEvents.onNewWin)
+
   $('#sign-out-div').hide()
 
   $('main').hide()
@@ -29,8 +30,24 @@ $(() => {
   $('#account_logo').on('click', showAccount )
   
   $('#wins').on('click' , '.delete-button' ,winEvents.deleteWin)
+
+
+  $('#wins').on('click' , '.edit-button' , helperFunction)
+
+  $('#edit-win-form').on('submit' , ()=>{
+    // let id = $(this).attr('id')
+    // console.log("id: " + id)
+    console.log("id: " + currentEditId)
+    winEvents.editWin(currentEditId)
+  })
   
 })
+
+let helperFunction = function(){
+  console.log("currentEditId: "+ $(this).attr('id'))
+  currentEditId = $(this).attr('id') ;
+  $('#edit-win-form').show()
+}
 
 let accountStatusShowing = false;
 

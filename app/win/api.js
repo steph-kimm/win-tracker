@@ -37,10 +37,21 @@ const deleteWin = function(id){
     })
 }
 
-
+const editWin = function(id,win){
+    return $.ajax({
+        method: "PATCH",
+        url: config.apiUrl +'/wins/' + id,
+        data:win,
+        headers: {
+            Authorization: 'Bearer ' + store.user.token,
+            
+        }
+    })
+}
 
 module.exports = {
     addNewWin,
     getWins,
-    deleteWin
+    deleteWin,
+    editWin
 }

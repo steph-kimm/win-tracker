@@ -19,9 +19,11 @@ const onSignInSuccess = function (response){
     console.log(response)
     //save the user info
     console.log("response user: " + response.user)
+    $('#edit-win-form').hide()
     // Stores the user along with the token!
     store.user= response.user
     //response.user.token 
+
     $('#auth-display').html('<h3>User signed in successfully! Now You can start adding wins!</h3>')
     $('form').trigger('reset')
     $('#sign-in-form').hide()
@@ -31,6 +33,7 @@ const onSignInSuccess = function (response){
     // $('#sign-out-div').show()
    // document.querySelector('#status').innerHTML = "" ;
    $('main').show()
+   
    
    $('#account_logo').show()
 
@@ -50,6 +53,9 @@ const onSignOutSuccess = function (){
     $('main').hide()
     $('#change-password-form').hide()
     $('#account_logo').hide()
+    $('#wins').html("")
+    
+
 }
 
 const onChangePasswordSuccess = function(){

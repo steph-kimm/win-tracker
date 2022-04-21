@@ -77,9 +77,28 @@ const onDeleteWinSuccess = function(id){
 
 }
 
+const onEditWinSuccess = function(data,id){
+    console.log(data)
+    console.log(data.win.text)
+    // console.log($('#' + id))
+    $(`#${id} p:first`).html(data.win.text)
+    $('#edit-win-form').hide()
+}
+
+
+const onEditWinFail = function(data,id){
+    console.log(data)
+    console.log(data.win.text)
+    // console.log($('#' + id))
+    $(`#change-status`).html("error! couldn't change. Make sure the text is different")
+}
+
+
 module.exports= {
     onNewWinSuccess,
     onNewWinFail,
     onLoadAllWinSuccess,
-    onDeleteWinSuccess
+    onDeleteWinSuccess,
+    onEditWinSuccess,
+    onEditWinFail
 }
