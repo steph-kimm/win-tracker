@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Daily Wins!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1 id="title">Wins for the day!</h1>
+      <!-- <div></div> -->
+      <img src="./app/styles/profile.png" alt="account" width="50px" id="account_logo">
+      <p id="welcome">Welcome to Wins for the day! Here you can track all your daily wins and look at wins from the past! Use this site to keep track of your awesome, and for a mood booster when you need it!</p>
+    
+      <div>
+        <form id="sign-up-form">
+          <h3>Sign Up:</h3>
+          <!-- Get form feilds will make an object from these names and values -->
+          <input name="credentials[email]" type="email" placeholder="Email"> 
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+          <button type="submit">Sign Up!</button>
+        </form>
+        
+        <form id="sign-in-form">
+          <h3>Sign In:</h3>
+          <!-- Get form feilds will make an object from these names and values -->
+          <input name="credentials[email]" type="email" placeholder="Email"> 
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <!-- <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password"> -->
+          <button type="submit">Sign In!</button>
+        </form>
+        <div id="account_info">
+        <form id="change-password-form">
+          <h3>Change Password:</h3>
+          <!-- Get form feilds will make an object from these names and values -->
+          <input name="passwords[old]" type="password" placeholder="Old Password"> 
+          <input name="passwords[new]" type="password" placeholder="New Password">
+          <p id="change-pass-status"></p>
+          <!-- <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password"> -->
+          <button type="submit">Update</button>
+        </form>
+
+
+        <div id="sign-out-div">
+          <button id="sign-out-button"> Sign Out</button>
+        </div>
+      </div>
+
+      </div>
+
+      <h3 id="auth-display"> Sign In or Sign Up if you don't have an account!</h3>
+    
+
+
+      <main id="content">
+        <div class="container">        
+          <h2>All Wins</h2>
+          <div id="wins">
+
+          </div>
+        </div>
+
+        <div class="container">
+        <form id="add-win-form" >
+          <h2>Add a new Win:</h2>
+          <!-- Get form feilds will make an object from these names and values -->
+          <input name="win[title]"  type="text" placeholder="Title"> 
+          <input name="win[text]" id="des_input" type="text" placeholder="Description">
+          <input name="win[date]"  type="text" placeholder="YEAR-MN-DY">
+          <!-- <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password"> -->
+          <button type="submit">Add!</button>
+        </form>
+
+        <form id="edit-win-form">
+          <h2>Update your Win:</h2>
+          <input name="win[text]" id="new_des_input" type="text" placeholder="New Description">
+          <button type="submit">Update!</button>
+        </form>
+
+        <h3 id="change-status"></h3>
+
+      </div>
+
+
+
+        
+        <h3 id="status"></h3>
+      </main>
+    </body>
+</html>
