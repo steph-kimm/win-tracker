@@ -6,10 +6,10 @@ const winUi = require('./ui.js')
 
 const onNewWin= function(){
     event.preventDefault()
-    console.log("attempting to add new win")
+    // console.log("attempting to add new win")
     const form = event.target 
     const data = getFormFields(form)
-    console.log(data)
+    // console.log(data)
 
 
     winApi.addNewWin(data)
@@ -34,8 +34,8 @@ const loadAllWins = function(){
 }
 
 const deleteWin = function(){
-    console.log("connected to events")
-    console.log($(this).attr('id'))
+    // console.log("connected to events")
+    // console.log($(this).attr('id'))
     let id = $(this).attr('id')
     
     winApi.deleteWin(id)
@@ -45,27 +45,25 @@ const deleteWin = function(){
     })
 }
 const editWin = function(id){
-    console.log("connected to events")
+    // console.log("connected to events")
 
-    console.log("id: " + id)
-
-
+    // console.log("id: " + id)
 
     event.preventDefault()
-    console.log("running events")
+    // console.log("running events")
     const form = event.target 
     const data = getFormFields(form)
-    console.log("data" + data)
+    // console.log("data" + data)
 
 
     winApi.editWin(id,data)    
     
     .then((response)=>{
-        console.log("Patch successful!")
+        // console.log("Patch successful!")
         winUi.onEditWinSuccess(data,id);
     })
     .catch(()=>{
-        console.log("Patch failed..")
+        // console.log("Patch failed..")
     })
 } 
 

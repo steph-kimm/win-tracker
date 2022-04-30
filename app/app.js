@@ -11,7 +11,7 @@ const winEvents = require('./win/events.js')
 let currentEditId = ""
 $(() => {
   // attatch event listeners 
-  console.log("hi")
+  // console.log("hi")
   $('#sign-up-form').on('submit', authEvents.onSignUp)
 
   $('#sign-in-form').on('submit',  authEvents.onSignIn)
@@ -37,14 +37,14 @@ $(() => {
   $('#edit-win-form').on('submit' , ()=>{
     // let id = $(this).attr('id')
     // console.log("id: " + id)
-    console.log("id: " + currentEditId)
+    // console.log("id: " + currentEditId)
     winEvents.editWin(currentEditId)
   })
   
 })
 
 let helperFunction = function(){
-  console.log("currentEditId: "+ $(this).attr('id'))
+  // console.log("currentEditId: "+ $(this).attr('id'))
   currentEditId = $(this).attr('id') ;
   $('#edit-win-form').show()
 }
@@ -52,7 +52,7 @@ let helperFunction = function(){
 let accountStatusShowing = false;
 
 let  showAccount = function(){
-  console.log("Showing account")
+  // console.log("Showing account")
   if(!accountStatusShowing){
     $('#sign-out-div').show()
     $('#change-password-form').show()

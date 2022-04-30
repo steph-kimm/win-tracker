@@ -5,7 +5,7 @@ const config = require('../config.js')
 
 
 const signUp = function (data){
-    console.log("store:" + store) // this is empty at this point
+    // console.log("store:" + store) // this is empty at this point
     // it will be full after sign- in 
     return $.ajax({
         method: "POST",
@@ -25,7 +25,7 @@ const signIn = function (data){
 }
 
 const signOut = function (){
-    console.log('loggedout!')
+    // console.log('loggedout!')
     return $.ajax({
         method: "DELETE",
         url: config.apiUrl + '/sign-out',

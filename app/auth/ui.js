@@ -16,9 +16,9 @@ const onSignUpFailure = function (){
 
 
 const onSignInSuccess = function (response){
-    console.log(response)
+    // console.log(response)
     //save the user info
-    console.log("response user: " + response.user)
+    // console.log("response user: " + response.user)
     $('#edit-win-form').hide()
     // Stores the user along with the token!
     store.user= response.user
@@ -59,7 +59,11 @@ const onSignOutSuccess = function (){
 }
 
 const onChangePasswordSuccess = function(){
-    $('status').html("password changed!")
+    $('change-pass-status').html("password successfully changed!")
+}
+
+const onChangePasswordFailure = function(){
+    $('change-pass-status').html("Password couldn't be changed! Please try again")
 }
 
 module.exports = {
@@ -68,7 +72,8 @@ module.exports = {
     onSignInSuccess,
     onSignInFailure,
     onSignOutSuccess,
-    onChangePasswordSuccess
+    onChangePasswordSuccess,
+    onChangePasswordFailure
     
     
 }

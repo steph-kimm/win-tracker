@@ -3,13 +3,13 @@
 const winEvents = require('./events.js')
 
 const onNewWinSuccess = function(response){
-    console.log("New win added successfully")
-    console.log(response)
+    // console.log("New win added successfully")
+    // console.log(response)
 
 
     let win = response.win
 
-    console.log(win._id)
+    // console.log(win._id)
     let deleteBtn = `<button class='delete-button'+  id='` +win._id +`' > X </button>`
     let editBtn = `<button class='edit-button' id='` + win._id  + `'> Edit </button>`
 
@@ -30,16 +30,16 @@ const onNewWinSuccess = function(response){
 
 const onNewWinFail = function(){
     // console.log("New win added successfully")
-    console.log("Win didn't add!")
+    // console.log("Win didn't add!")
     $('#status').html('Win not added! Make sure the date is correct!')
 }
 
 
 
 const onLoadAllWinSuccess = function(response){
-    console.log(response)
+    // console.log(response)
     const winArray = response.wins
-    console.log("array: " + winArray)
+    // console.log("array: " + winArray)
 
     let allWins = ""
     // let allWinsHTML = $.parseHTML(allWins)
@@ -50,7 +50,7 @@ const onLoadAllWinSuccess = function(response){
         let deleteBtn = `<button class='delete-button'+  id='` +element._id +`' > X </button>`
         let editBtn = `<button class='edit-button' id='` + element._id  + `'> Edit </button>`
     
-        console.log("In here")
+        // console.log("In here")
         let title = "<h4> " + element.title + " </h4>" 
 
         let description = "<p>" + element.text + "</p>"
@@ -69,8 +69,8 @@ const onLoadAllWinSuccess = function(response){
 }
 
 const onDeleteWinSuccess = function(id){
-    console.log("winDeleted")
-    console.log("id: " + id)
+    // console.log("winDeleted")
+    // console.log("id: " + id)
     // console.log(response.win)
     // console.log(response.win._id)
     $( "#" + id ).remove();
@@ -78,8 +78,8 @@ const onDeleteWinSuccess = function(id){
 }
 
 const onEditWinSuccess = function(data,id){
-    console.log(data)
-    console.log(data.win.text)
+    // console.log(data)
+    // console.log(data.win.text)
     // console.log($('#' + id))
     $(`#${id} p:first`).html(data.win.text)
     $('#edit-win-form').hide()
@@ -87,8 +87,8 @@ const onEditWinSuccess = function(data,id){
 
 
 const onEditWinFail = function(data,id){
-    console.log(data)
-    console.log(data.win.text)
+    // console.log(data)
+    // console.log(data.win.text)
     // console.log($('#' + id))
     $(`#change-status`).html("error! couldn't change. Make sure the text is different")
 }

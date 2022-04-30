@@ -8,17 +8,17 @@ const authUi = require('./ui.js')
 
 const onSignUp = function(event){
     event.preventDefault()
-    console.log("running events")
+    // console.log("running events")
 
     const form = event.target 
 
     const data = getFormFields(form)
-    console.log(data)
+    // console.log(data)
 
     //api call 
     authApi.signUp(data)
     .then(()=>{
-        console.log("sign-up successfully")
+        // console.log("sign-up successfully")
         authUi.onSignUpSuccess();
     })
     .catch(authUi.onSignUpFailure())
@@ -26,17 +26,17 @@ const onSignUp = function(event){
 
 const onSignIn = function(event){
     event.preventDefault()
-    console.log("running events")
+    // console.log("running events")
 
     const form = event.target 
 
     const data = getFormFields(form)
-    console.log(data)
+    // console.log(data)
 
     //api call data in this case is the user info 
     authApi.signIn(data)
     .then((response)=>{
-        console.log("sign-in successfully")
+        // console.log("sign-in successfully")
         authUi.onSignInSuccess(response);
     })
     .catch(authUi.onSignInFailure())
@@ -58,14 +58,14 @@ const onChangePassword = function(event){
     const form = event.target 
 
     const data = getFormFields(form)
-    console.log(data)
+    // console.log(data)
 
     authApi.changePassword(data)
     .then(()=>{
         authUi.onChangePasswordSuccess();
-        console.log("password Changed!")
+        // console.log("password Changed!")
     })
-    // .catch(console.log("password couldn't be changed"))
+    .catch(authUi.onChangePasswordFailure())
 }
 
 module.exports = {
