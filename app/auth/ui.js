@@ -59,11 +59,11 @@ const onSignOutSuccess = function (){
 }
 
 const onChangePasswordSuccess = function(){
-    $('change-pass-status').html("password successfully changed!")
+    $('#change-pass-status').html("password successfully changed!")
 }
 
 const onChangePasswordFailure = function(){
-    $('change-pass-status').html("Password couldn't be changed! Please try again")
+    $('#change-pass-status').html("Password couldn't be changed! Please try again")
 }
 
 module.exports = {
